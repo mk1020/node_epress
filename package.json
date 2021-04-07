@@ -1,0 +1,22 @@
+{
+  "name": "node_epress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mk1020/node_epress.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mk1020/node_epress/issues"
+  },
+  "homepage": "https://github.com/mk1020/node_epress#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
