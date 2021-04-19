@@ -31,7 +31,7 @@ app.post(`/my-profile/:userName`, jsonParser, (req, res) => {
   const userName = req.params.userName;
   const userData = req.body;
 
-  if (userData.name && userData.lastName && userData.country) {
+  if (userData.username && userData.lastName && userData.country) {
     usersData.push(userData)
     res.set('Content-Type', 'text/plain');
     res.send('success')
