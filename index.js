@@ -20,8 +20,8 @@ app.get('/year-now', (req, res) => {
   app.get(`/my-profile/:userName`, (req, res) => {
     const userName = req.params.userName;
     const userData = usersData.find((user)=> user.username == userName);
-    if (userName) {
-      res.send(userName)
+    if (userData) {
+      res.send(userData)
     } else {
       res.status(404).end('Not found))');
     }
