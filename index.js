@@ -17,17 +17,22 @@ app.get('/year-now', (req, res) => {
 
 })
 
-usersData.forEach((user) => (
-  app.get(`/my-profile/${user.username}`, (req, res) => {
-    res.send(user)
+  app.get(`/my-profile/:userName`, (req, res) => {
+    const userName = req.params.userName;
+    const userData = usersData.find((user)=> user.username == userName);
+    if (userName) {
+      res.send(userName)
+    } else {
+      res.status(404).end('Not found))');
+    }
   })
-))
 
 app.post(`/my-profile/:userName`, jsonParser, (req, res) => {
   const userName = req.params.userName;
   const userData = req.body;
 
   if (userData.name && userData.lastName && userData.country) {
+    usersData.push(userData)
     res.set('Content-Type', 'text/plain');
     res.send('success')
   } else {
